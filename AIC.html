@@ -1,0 +1,129 @@
+<!doctype html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AI CHATBOT - AI Philosophy</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<ul id="navigation">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li class="selected">
+						<a href="about.html">AI CHATBOT</a>
+					</li>
+				
+				</ul>
+			</div>
+		</div>
+		<div id="body" class="about">
+			<div class="header">
+				<div>
+					<h1>AI CHATBOT (CHATGPT)</h1>
+
+					<div class="chat-container" id="chat-container">
+						<div class="chat-header" id="chat-header" text>
+							AI CHATBOT (PROTOTYPE)
+							<span id="chat-toggle">&#x25B2;</span> <!-- CHATBOT -->
+						</div>
+						<div class="chat-messages" id="chat-messages"></div>
+						<div class="chat-input" id="chat-input-area">
+							<input type="text" id="user-input" placeholder="Type a message..." />
+							<button id="send-btn">Send</button>
+						</div>
+					</div>
+
+					<h2>Welcome to our interactive chatbot</h2>
+					<p>Our interactive chatbot prototype offers a compact, user-friendly interface, positioned conveniently at the bottom-right corner of the screen. It allows users to send messages and receive instant AI-generated responses in a conversational style. The design emphasizes simplicity and responsiveness, ensuring smooth interaction across devices. This prototype serves as a foundation for more advanced AI-driven communication features in future versions.</p>
+				</div>
+			</div>
+			<div class="body">
+				<div>
+					<img src="images/earth-satellite.jpg" alt="">
+					<h2>Some more information</h2>
+					<p>Our interactive chatbot prototype provides users with an intuitive platform to engage in real-time conversations. It features a collapsible interface, text input, and instant AI responses, making interactions seamless and engaging. The design prioritizes accessibility, minimalism, and responsiveness, ensuring usability on various devices. This prototype lays the groundwork for expanding AI capabilities, integrating contextual understanding, and enhancing personalized user interactions in future iterations.</p>
+				</div>
+			</div>
+			<div class="footer">
+				<div>
+					<img src="images/space-shuttle.png" alt="">
+					<h2>Facing Issues?</h2>
+					<p>If you’re experiencing issues and concerns about this website functioning, kindly email us chaturvedishraddha0706@gmail.com . We will handle your issue at top most priority thank you for contacting us!</p>
+				</div>
+			</div>
+			<div class="section">
+				<div>
+					<h2>copyright notice</h2>
+					<p>© 2025 Shradhha Chaturvedi. All rights reserved.  
+						This website and its content, including text, images, and design, are the intellectual property of Shradhha Chaturvedi and may not be reproduced or used without permission.  
+						Designed and maintained with care in September 2025.</p>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="connect">
+				<div>
+					<h1>FOLLOW OUR  MISSIONS ON</h1>
+					<div>
+						<a href="https://www.facebook.com/dsvvofficial/" class="facebook">facebook</a>
+						<a href="https://twitter.com/dsvvofficial/status/1857679312612372866" class="twitter">twitter</a>
+						<a href="https://share.google/Zr0pWOrFaVuYyQxXw" class="googleplus">googleplus</a>
+						<a href="https://in.pinterest.com/pin/dev-sanskriti-vishwavidyalaya-haridwar-uttarakhand--770397080041251335/" class="pinterest">pinterest</a>
+					</div>
+				</div>
+			</div>
+			<div class="footnote">
+				<div>
+					<p>&copy; 2025 BY SHRADDHA CHATURVEDI | ALL RIGHTS RESERVED</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/mobile.js" type="text/javascript"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const chatContainer = document.getElementById("chat-container");
+			const chatHeader = document.getElementById("chat-header");
+			const chatToggle = document.getElementById("chat-toggle");
+			const input = document.getElementById("user-input");
+			const sendBtn = document.getElementById("send-btn");
+			const messages = document.getElementById("chat-messages");
+
+			chatHeader.addEventListener("click", () => {
+				chatContainer.classList.toggle("minimized");
+				chatToggle.textContent = chatContainer.classList.contains("minimized") ? "\u25BC" : "\u25B2";
+			});
+
+			function sendMessage() {
+				const msg = input.value.trim();
+				if(msg === "") return;
+
+				const userMsg = document.createElement("div");
+				userMsg.textContent = "You: " + msg;
+				userMsg.style.margin = "5px 0";
+				messages.appendChild(userMsg);
+
+				const botMsg = document.createElement("div");
+				botMsg.textContent = "AI: This is a demo response.";
+				botMsg.style.margin = "5px 0";
+				botMsg.style.color = "blue";
+				messages.appendChild(botMsg);
+
+				input.value = "";
+				messages.scrollTop = messages.scrollHeight;
+			}
+
+			sendBtn.addEventListener("click", sendMessage);
+			input.addEventListener("keypress", (e) => { if(e.key === "Enter") sendMessage(); });
+		});
+	</script>
+</body>
+</html>
